@@ -6,46 +6,39 @@ const introduction = [
         alt: "introduction",
       },
       {
-        href: "/introduction",
+        href: "/installation",
         link: "Installation",
-        alt: "installation",
-      },
-      {
-        href: "/introduction",
-        link: "Release notes",
         alt: "installation",
       },
 ]
 
 const usage = [ 
   {
-    href: "/introduction",
-    link: "Positioning toast",
-    alt: "introduction",
+    href: "/positioning-toastify",
+    link: "Positioning toastify",
+    alt: "Positioning Toastify",
   },
   {
-    href: "/introduction",
-    link: "Handling auto",
-    alt: "installation",
+    href: "/remove-toast",
+    link: "Remove Toast Programatically",
+    alt: "Remove Toast",
+  },
+  {
+    href: "/duration",
+    link: "Handling Duration",
+    alt: "handling Duration",
   },
 ]
 
-const addon = [ 
+const api_reference = [ 
   {
-    href: "/introduction",
-    link: "Positioning toast",
-    alt: "introduction",
+    href: "/toast-container",
+    link: "Toast Container",
+    alt: "toast container",
   },
-  {
-    href: "/introduction",
-    link: "Handling auto",
-    alt: "installation",
-  },
-]
-
-const notificationcenter=[
 
 ]
+
 export const sideBar=[
     {
         link: "Getting Started",
@@ -66,11 +59,11 @@ export const sideBar=[
 
       },
       {
-        link: "Addon",
-        alt: "introduction",
-        href: "/introduction",
+        link: "Api Reference",
+        alt: "api reference",
+        href: "/api_reference",
         show: true,
         submenu: true,
-        subMenuItems:addon,
+        subMenuItems:api_reference,
       },
 ]
