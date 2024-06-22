@@ -18,8 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body         className={`${fonts.className} m-0 text-base antialiased pt-4 font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500"`}
->{children}</body>
+      <body
+        className={`${fonts.className} m-0 text-base antialiased  font-normal dark:bg-slate-900 leading-default bg-gray-50 text-black "`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

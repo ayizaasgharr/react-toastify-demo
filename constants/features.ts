@@ -1,0 +1,20 @@
+export const toastFeatures = [
+    "Smooth enter/exit animations",
+    "Plain simple and flexible APIs",
+    "Resize itself correctly on device rotation",
+    "Swipeable",
+    "Easy to set up for real, you can make it work in less than 10 seconds!",
+    "Super easy to customize",
+    "RTL support",
+    "Swipe to close 👌",
+    "Can choose swipe direction",
+    "Super easy to use an animation of your choice. Works well with animate.css for example",
+    "Define behavior per toast",
+    "Pause toast by clicking on the toast 👁",
+    "Fancy progress bar to display the remaining time",
+    "Possibility to update a toast",
+    "You can control the progress bar a la nprogress 😲",
+    "You can display multiple toasts at the same time",
+    "Dark and light mode 🌒",
+    "And much more!"
+  ];
