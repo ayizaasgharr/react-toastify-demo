@@ -1,60 +1,58 @@
-import { useRef } from "react";
-import { Button } from "@nextui-org/react";
-import { ToastContainer, toast, Slide, Zoom, Bounce, Id } from "react-toastify";
-import { toastify, checkbox } from "@/types/toastifyType";
-import "react-toastify/dist/ReactToastify.css";
+import { Button } from '@nextui-org/react';
+import { Id, Bounce, ToastContainer, toast, Slide, Zoom } from 'react-toastify';
+import { useRef } from 'react';
 
-interface ButtonsProps {
-  state: toastify;
-  defaultToastify: toastify;
-  setTypeState: any;
-  checkBox: checkbox;
-}
+import { ButtonsProps } from '@/app/interfaces/button';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Buttons: React.FC<ButtonsProps> = ({
   state,
   defaultToastify,
   setTypeState,
   checkBox,
 }) => {
+
   const toastId = useRef<Id>(1);
+
   const setToastPosition = (position: string) => {
     switch (position) {
-      case "top":
-        return "top-right";
-      case "bottom":
-        return "bottom-right";
-      case "center":
-        return "top-center";
+      case 'top':
+        return 'top-right';
+      case 'bottom':
+        return 'bottom-right';
+      case 'center':
+        return 'top-center';
     }
   };
 
   const setTheme = (theme: string) => {
     switch (theme) {
-      case "black":
-        return "dark";
-      case "white":
-        return "light";
+      case 'black':
+        return 'dark';
+      case 'white':
+        return 'light';
     }
   };
 
   const setAnimation = (animation: string) => {
     switch (animation) {
-      case "upInUpOut":
+      case 'upInUpOut':
         return Bounce;
-      case "rightInOut":
+      case 'rightInOut':
         return Slide;
-      case "zoomInOut":
+      case 'zoomInOut':
         return Zoom;
     }
   };
+
   const handleNotify = () => {
-    toastId.current = toast("Custom Style Notification with css class!", {
+    toastId.current = toast('Custom Style Notification with css class!', {
       position: setToastPosition(state.position),
       type: state.toastType,
       autoClose: !checkBox.disableAutoClose && state.duration,
       theme: setTheme(state.backgroundColor),
       transition: setAnimation(state.animationStyle),
-      className: "foo-bar",
+      className: 'foo-bar',
     });
   };
 
@@ -62,12 +60,13 @@ const Buttons: React.FC<ButtonsProps> = ({
     const resolveAfter3Sec = new Promise((resolve) =>
       setTimeout(resolve, 3000)
     );
+
     toast.promise(
       resolveAfter3Sec,
       {
-        pending: "Promise is pending",
-        success: "Promise resolved 👌",
-        error: "Promise rejected 🤯",
+        pending: 'Promise is pending',
+        success: 'Promise resolved 👌',
+        error: 'Promise rejected 🤯',
       },
       {
         position: setToastPosition(state.position),
@@ -92,43 +91,43 @@ const Buttons: React.FC<ButtonsProps> = ({
   return (
     <>
       <ToastContainer />
-      <div className="mt-8 flex space-x-8">
+      <div className='mt-8 flex space-x-8'>
         <Button
-          color="primary"
-          radius="sm"
-          variant="ghost"
+          color='primary'
+          radius='sm'
+          variant='ghost'
           onClick={handleNotify}
         >
           Show Toast
         </Button>
         <Button
-          color="primary"
-          radius="sm"
-          variant="ghost"
+          color='primary'
+          radius='sm'
+          variant='ghost'
           onClick={handlePromiseNotify}
         >
           Promise
         </Button>
         <Button
-          color="primary"
-          radius="sm"
-          variant="ghost"
+          color='primary'
+          radius='sm'
+          variant='ghost'
           onClick={handleUpdateNotify}
         >
           Update
         </Button>
         <Button
-          color="primary"
-          radius="sm"
-          variant="ghost"
+          color='primary'
+          radius='sm'
+          variant='ghost'
           onClick={() => toast.dismiss()}
         >
           Clear All
         </Button>
         <Button
-          color="primary"
-          radius="sm"
-          variant="ghost"
+          color='primary'
+          radius='sm'
+          variant='ghost'
           onClick={() => setTypeState(() => defaultToastify)}
         >
           Reset

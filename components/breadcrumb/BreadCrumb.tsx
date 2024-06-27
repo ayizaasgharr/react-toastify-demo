@@ -1,6 +1,6 @@
 "use client";
+import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/react';
 import React from "react";
-import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 
 const BreadCrumb = () => {
@@ -15,4 +15,5 @@ const BreadCrumb = () => {
     </div>
   );
 };
+
 export default BreadCrumb;

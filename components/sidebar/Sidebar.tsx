@@ -1,11 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { sideBar } from "@/constants/sidebarItems";
 
-type DropdownState = {
-  open: boolean;
-  index: number[];
-};
+import React, { useState } from "react";
+
+import { sideBar } from "@/constants/sidebarItems";
+import {DropdownState} from "@/types/navItemType"
 
 const Sidebar = () => {
   const [DropdownOpen, setDropdownOpen] = useState<DropdownState>({
@@ -120,8 +118,8 @@ const Sidebar = () => {
                 } py-2 space-y-2`}
               >
                 {true &&
-                  item.subMenuItems.map((subitem) => (
-                    <li>
+                  item.subMenuItems.map((subitem, index) => (
+                    <li key={index}>
                       <a
                         href={subitem.href}
                         className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
