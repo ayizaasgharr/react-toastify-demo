@@ -1,34 +1,25 @@
 "use client";
+
 import React, { useState } from "react";
+
+import Buttons from './components/Buttons';
+import Code from './components/Code';
+import CheckBoxList from './components/CheckBoxList';
+import { defaultToastify, position, type, theme } from "@/constants/introduction";
+import InputOptions from './components/InputOptions';
+import Paragraph from '@/components/typography/headings/paragraph';
+import Section from '@/components/typography/headings/section';
 import Title from "@/components/typography/headings/title";
-import Section from "@/components/typography/headings/section";
-import Paragraph from "@/components/typography/headings/paragraph";
-import Code from "./components/Code";
 import ToastifyOptions from "@/components/options/ToastifyOptions";
-import InputOptions from "./components/InputOptions";
-import CheckBoxList from "./components/CheckBoxList";
-import Buttons from "./components/Buttons";
 import { toastFeatures } from "@/constants/features";
 import { toastify, checkbox } from "@/types/toastifyType";
 
 const Introduction = () => {
-  const defaultToastify: toastify = {
-    position: "center",
-    duration: 3000,
-    animationStyle: "upInUpOut",
-    closeOnClick: true,
-    toastType: "info",
-    backgroundColor: "white",
-  };
   const [typeState, setTypeState] = useState<toastify>(defaultToastify);
   const [checkBox, setCheckBox] = useState<checkbox>({
     hasBackDrop: false,
     disableAutoClose: false,
   });
-
-  const position = ["top", "bottom", "center"];
-  const type = ["info", "success", "warning", "default"];
-  const theme = ["black", "white"];
 
   return (
     <div className="flex-wrap">
@@ -70,8 +61,8 @@ const Introduction = () => {
       />
       <Paragraph text={"Feature"} />
       <ul className="ml-5 list-disc">
-        {toastFeatures.map((feature) => (
-          <li>{feature}</li>
+        {toastFeatures.map((feature,index) => (
+          <li key={index}>{feature}</li>
         ))}
       </ul>
       <Paragraph text={"Contribute"} />
@@ -82,4 +73,5 @@ const Introduction = () => {
     </div>
   );
 };
+
 export default Introduction;

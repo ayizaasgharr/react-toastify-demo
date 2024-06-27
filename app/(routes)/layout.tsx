@@ -1,8 +1,9 @@
 import { Suspense } from "react";
+import { NextUIProvider } from '@nextui-org/react';
+
 import Sidebar from "@/components/sidebar/Sidebar";
-import BreadCrumb from "@/components/breadcrumb/BreadCrumb";
-import { NextUIProvider } from "@nextui-org/react";
-export default async function Layout({
+
+export default async function Layout ({
   children,
 }: {
   children: React.ReactNode;

@@ -6,15 +6,14 @@ import {
   DropdownTrigger,
   Button,
 } from "@nextui-org/react";
+import { memo } from 'react';
+
 import { toastify } from "@/types/toastifyType";
-import { memo } from "react";
-interface InputProps {
-  typeState: toastify;
-  setTypeState: any;
-}
+import { InputProps } from "@/app/interfaces/input";
+
+const transition = ['upInUpOut', 'rightInOut', 'zoomInOut'];
 
 const InputOptions: React.FC<InputProps> = ({ typeState, setTypeState }) => {
-  const transition = ["upInUpOut", "rightInOut", "zoomInOut"];
 
   const handleSelectionChange = (keys: React.Key[]) => {
     setTypeState((prevState: toastify) => ({
@@ -63,4 +62,5 @@ const InputOptions: React.FC<InputProps> = ({ typeState, setTypeState }) => {
     </div>
   );
 };
+
 export default memo(InputOptions);

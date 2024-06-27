@@ -1,11 +1,11 @@
-import React from "react";
-import Title from "@/components/typography/headings/title";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { installToast } from "@/constants/installToast";
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import React from 'react';
 
-const Installation = () => {
-  return (
+import { installToast } from '@/constants/installToast';
+import Title from "@/components/typography/headings/title";
+
+const Installation = () => (
     <div className="w-full">
       <Title text={"Installation"} />
       <div>With npm:</div>
@@ -28,7 +28,7 @@ const Installation = () => {
           </SyntaxHighlighter>
         </div>
       </div>
-    </div>
-  );
-};
+  </div>
+);
+
 export default Installation;

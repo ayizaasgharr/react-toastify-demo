@@ -8,10 +8,11 @@ import {
   TableRow,
   TableCell,
 } from "@nextui-org/react";
+
+import Paragraph from '@/components/typography/headings/paragraph';
 import Title from "@/components/typography/headings/title";
-import Paragraph from "@/components/typography/headings/paragraph";
-import { toastProperties, columns } from "@/constants/toastTable";
 import { ToastProperty, ToastColumn } from "@/types/toastifyType";
+import { toastProperties, columns } from '@/constants/toastTable';
 
 const ToastTable = () => {
   const getKeyValue = (item: ToastProperty, columnKey: Key) => {

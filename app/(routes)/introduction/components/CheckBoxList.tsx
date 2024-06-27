@@ -1,24 +1,19 @@
 import { Checkbox } from "@nextui-org/react";
 import { memo } from "react";
+
 import { checkbox } from "@/types/toastifyType";
 import { checkboxContent } from "@/types/toastifyType";
+import { checkboxes } from '@/constants/checkboxToast';
 
-interface CheckBoxProps {
-  checkBox: checkbox;
-  setCheckBox: any;
-}
+const CheckBoxList = ( {setCheckBox}:any ) => {
 
-const CheckBoxList: React.FC<CheckBoxProps> = ({ checkBox, setCheckBox }) => {
   const handleCheckBoxChange = (value: boolean, key: string) => {
     setCheckBox((prevState: checkbox) => ({
       ...prevState,
       [key]: value,
     }));
   };
-  const checkboxes = [
-    { description: "Has back drop", key: "hasBackDrop" },
-    { description: "Disable Auto close", key: "disableAutoClose" },
-  ];
+
   return (
     <div className="mt-8 flex justify-between w-8/12">
       {checkboxes.map((checkbox: checkboxContent) => (
@@ -34,4 +29,5 @@ const CheckBoxList: React.FC<CheckBoxProps> = ({ checkBox, setCheckBox }) => {
     </div>
   );
 };
+
 export default memo(CheckBoxList);

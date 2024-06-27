@@ -5,3 +5,7 @@ export type SideNavItem = {
     href: string;
   };
   
+export type DropdownState = {
+  open: boolean;
+  index: number[];
+};
